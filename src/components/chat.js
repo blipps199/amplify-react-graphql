@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { API } from 'aws-amplify';
 import { Button, Flex, Heading, Text, TextField, View, Card } from '@aws-amplify/ui-react';
 import { listChats } from "../graphql/queries";
+import moment from 'moment';
 import {
   createChat as createChatMutation,
 } from "../graphql/mutations";
@@ -10,6 +11,7 @@ import { Auth } from 'aws-amplify';
 const Chat = () => {
   const [chats, setChats] = useState([]);
   const [username, setUsername] = useState(null);
+  const sortedChats = chats.sort((a, b) => moment(a.timestamp, 'MMM. D, YYYY h:mm a') - moment(b.timestamp, 'MMM. D, YYYY h:mm a'));
 
   useEffect(() => {
     async function getUsername() {
@@ -63,12 +65,20 @@ const Chat = () => {
     return strTime;
   }
 
+  
 
   return (
     <Card>
-      <View as="form" margin="3rem 0" onSubmit={createChat}>
-        <Heading level={3} margin="0 0 1rem">Add Game</Heading>
-        <Flex direction="row" justifyContent="center" alignItems="center">
+      <Heading level={4}>Three Kings Messenger</Heading>
+      <View as="form" margin="1rem 0" onSubmit={createChat}>
+          {sortedChats.map((chat) => (
+              <Flex key={chat.id || chat.username} direction="row" justifyContent="center" alignItems="center">
+                  <Text as="strong" fontWeight={700}>{chat.username}</Text>
+                  <Text as="span">{chat.message}</Text>
+                  <Text as="span">{chat.timestamp}</Text>
+              </Flex>
+          ))}
+        <Flex margin="15px 0 0 0" direction="row" justifyContent="center" alignItems="center">
           <TextField
             name="message"
             placeholder="Enter Message"
@@ -82,16 +92,6 @@ const Chat = () => {
           </Button>
         </Flex>
       </View>
-        <Heading level={4}>Current Games</Heading>
-        <View margin="1rem 0">
-            {chats.map((chat) => (
-                <Flex key={chat.id || chat.username} direction="row" justifyContent="center" alignItems="center">
-                    <Text as="strong" fontWeight={700}>{chat.username}</Text>
-                    <Text as="span">{chat.message}</Text>
-                    <Text as="span">{chat.timestamp}</Text>
-                </Flex>
-            ))}
-        </View>
     </Card>
     );
 }
