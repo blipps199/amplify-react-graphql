@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import "@aws-amplify/ui-react/styles.css";
 import {
@@ -12,13 +12,26 @@ import {
   Divider,
   withAuthenticator,
 } from '@aws-amplify/ui-react';
+import { Auth } from 'aws-amplify';
 
 import AddListPlayers from './components/addlistplayers'
 import AddListGames from './components/addlistgames'
+import Chat from './components/chat'
 
 const App = ({ signOut }) => {
+
+  const [username, setUsername] = useState(null);
+
+  useEffect(() => {
+    async function getUsername() {
+      const result = await Auth.currentUserInfo();
+      setUsername(result.username);
+    }
+
+    getUsername();
+  }, []);
   
-  const [showComponents, setShowComponents] = useState([true, false]);
+  const [showComponents, setShowComponents] = useState([true, false, false]);
 
   const toggleComponent = (index) => {
     const newShowComponents = showComponents.map((show, i) => {
@@ -41,23 +54,30 @@ const App = ({ signOut }) => {
         <Card>
           <Flex direction="row" justifyContent="space-between" alignItems="center">
             <Heading level={1}>Three Kings</Heading>
-            <Menu menuAlign="end">
-              <MenuItem onClick={() => toggleComponent(0)}>
-                Players
-              </MenuItem>
-              <MenuItem onClick={() => toggleComponent(1)}>
-                Games
-              </MenuItem>
-              <Divider />
-              <MenuItem onClick={signOut}>
-                Sign Out
-              </MenuItem>
-            </Menu>
+            <Flex alignItems="center">
+              <p>Hello, {username}!</p>
+              <Menu menuAlign="end">
+                <MenuItem onClick={() => toggleComponent(0)}>
+                  Players
+                </MenuItem>
+                <MenuItem onClick={() => toggleComponent(1)}>
+                  Games
+                </MenuItem>
+                <MenuItem onClick={() => toggleComponent(2)}>
+                  Chat
+                </MenuItem>
+                <Divider />
+                <MenuItem onClick={signOut}>
+                  Sign Out
+                </MenuItem>
+              </Menu>
+            </Flex>
           </Flex>
         </Card>
         
         {showComponents[0] && <AddListPlayers/>}
         {showComponents[1] && <AddListGames/>}
+        {showComponents[2] && <Chat/>}
       </Grid>
 
     </View>

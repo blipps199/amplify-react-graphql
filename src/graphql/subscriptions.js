@@ -40,3 +40,81 @@ export const onDeletePlayer = /* GraphQL */ `
     }
   }
 `;
+export const onCreateGame = /* GraphQL */ `
+  subscription OnCreateGame($filter: ModelSubscriptionGameFilterInput) {
+    onCreateGame(filter: $filter) {
+      id
+      name
+      genre
+      platform
+      description
+      image
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateGame = /* GraphQL */ `
+  subscription OnUpdateGame($filter: ModelSubscriptionGameFilterInput) {
+    onUpdateGame(filter: $filter) {
+      id
+      name
+      genre
+      platform
+      description
+      image
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteGame = /* GraphQL */ `
+  subscription OnDeleteGame($filter: ModelSubscriptionGameFilterInput) {
+    onDeleteGame(filter: $filter) {
+      id
+      name
+      genre
+      platform
+      description
+      image
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateChat = /* GraphQL */ `
+  subscription OnCreateChat($filter: ModelSubscriptionChatFilterInput) {
+    onCreateChat(filter: $filter) {
+      id
+      username
+      message
+      timestamp
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateChat = /* GraphQL */ `
+  subscription OnUpdateChat($filter: ModelSubscriptionChatFilterInput) {
+    onUpdateChat(filter: $filter) {
+      id
+      username
+      message
+      timestamp
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteChat = /* GraphQL */ `
+  subscription OnDeleteChat($filter: ModelSubscriptionChatFilterInput) {
+    onDeleteChat(filter: $filter) {
+      id
+      username
+      message
+      timestamp
+      createdAt
+      updatedAt
+    }
+  }
+`;
