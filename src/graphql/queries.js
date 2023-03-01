@@ -32,11 +32,11 @@ export const listNotes = /* GraphQL */ `
     }
   }
 `;
-export const getPlayers = /* GraphQL */ `
-  query GetPlayers($id: ID!) {
-    getPlayers(id: $id) {
+export const getPlayer = /* GraphQL */ `
+  query GetPlayer($id: ID!) {
+    getPlayer(id: $id) {
       id
-      name
+      playername
       gamertag
       location
       description
@@ -47,14 +47,14 @@ export const getPlayers = /* GraphQL */ `
 `;
 export const listPlayers = /* GraphQL */ `
   query ListPlayers(
-    $filter: ModelPlayersFilterInput
+    $filter: ModelPlayerFilterInput
     $limit: Int
     $nextToken: String
   ) {
     listPlayers(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        name
+        playername
         gamertag
         location
         description

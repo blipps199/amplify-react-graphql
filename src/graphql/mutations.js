@@ -46,14 +46,14 @@ export const deleteNote = /* GraphQL */ `
     }
   }
 `;
-export const createPlayers = /* GraphQL */ `
-  mutation CreatePlayers(
-    $input: CreatePlayersInput!
-    $condition: ModelPlayersConditionInput
+export const createPlayer = /* GraphQL */ `
+  mutation CreatePlayer(
+    $input: CreatePlayerInput!
+    $condition: ModelPlayerConditionInput
   ) {
-    createPlayers(input: $input, condition: $condition) {
+    createPlayer(input: $input, condition: $condition) {
       id
-      name
+      playername
       gamertag
       location
       description
@@ -62,14 +62,14 @@ export const createPlayers = /* GraphQL */ `
     }
   }
 `;
-export const updatePlayers = /* GraphQL */ `
-  mutation UpdatePlayers(
-    $input: UpdatePlayersInput!
-    $condition: ModelPlayersConditionInput
+export const updatePlayer = /* GraphQL */ `
+  mutation UpdatePlayer(
+    $input: UpdatePlayerInput!
+    $condition: ModelPlayerConditionInput
   ) {
-    updatePlayers(input: $input, condition: $condition) {
+    updatePlayer(input: $input, condition: $condition) {
       id
-      name
+      playername
       gamertag
       location
       description
@@ -78,14 +78,14 @@ export const updatePlayers = /* GraphQL */ `
     }
   }
 `;
-export const deletePlayers = /* GraphQL */ `
-  mutation DeletePlayers(
-    $input: DeletePlayersInput!
-    $condition: ModelPlayersConditionInput
+export const deletePlayer = /* GraphQL */ `
+  mutation DeletePlayer(
+    $input: DeletePlayerInput!
+    $condition: ModelPlayerConditionInput
   ) {
-    deletePlayers(input: $input, condition: $condition) {
+    deletePlayer(input: $input, condition: $condition) {
       id
-      name
+      playername
       gamertag
       location
       description

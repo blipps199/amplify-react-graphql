@@ -26,6 +26,7 @@ const App = ({ signOut }) => {
 
   useEffect(() => {
     fetchNotes();
+    fetchPlayers();
   }, []);
 
   async function fetchNotes() {
@@ -51,7 +52,7 @@ const App = ({ signOut }) => {
         return player;
       })
     );
-    setNotes(playersFromAPI);
+    setPlayers(playersFromAPI);
   }
 
   async function createNote(event) {
@@ -76,7 +77,7 @@ const App = ({ signOut }) => {
     event.preventDefault();
     const form = new FormData(event.target);
     const data = {
-      name: form.get("name"),
+      playername: form.get("playername"),
       gamertag: form.get("gamertag"),
       location: form.get("location"),
       description: form.get("description"),
@@ -95,6 +96,16 @@ const App = ({ signOut }) => {
     await Storage.remove(name);
     await API.graphql({
       query: deleteNoteMutation,
+      variables: { input: { id } },
+    });
+  }
+  
+  async function deletePlayer({ id, name }) {
+    const newPlayers = players.filter((player) => player.id !== id);
+    setPlayers(newPlayers);
+    await Storage.remove(name);
+    await API.graphql({
+      query: deletePlayerMutation,
       variables: { input: { id } },
     });
   }
@@ -200,20 +211,20 @@ const App = ({ signOut }) => {
         ))}
       </View>
       <br />
-      <Heading level={2}>Current Players</Heading>
+      <Heading level={3}>Current Players</Heading>
       <View margin="3rem 0">
         {players.map((player) => (
           <Flex
-            key={player.id || player.name}
+            key={player.id || player.playername}
             direction="row"
             justifyContent="center"
             alignItems="center"
           >
-            <Text as="strong" fontWeight={700}>{player.name}</Text>
+            <Text as="strong" fontWeight={700}>{player.playername}</Text>
             <Text as="span">{player.gamertag}</Text>
             <Text as="span">{player.location}</Text>
             <Text as="span">{player.description}</Text>
-            <Button variation="link" onClick={() => deleteNote(player)}>
+            <Button variation="link" onClick={() => deletePlayer(player)}>
               Delete note
             </Button>
           </Flex>
