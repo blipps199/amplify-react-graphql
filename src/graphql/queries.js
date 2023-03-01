@@ -32,3 +32,36 @@ export const listNotes = /* GraphQL */ `
     }
   }
 `;
+export const getPlayers = /* GraphQL */ `
+  query GetPlayers($id: ID!) {
+    getPlayers(id: $id) {
+      id
+      name
+      gamertag
+      location
+      description
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listPlayers = /* GraphQL */ `
+  query ListPlayers(
+    $filter: ModelPlayersFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listPlayers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        gamertag
+        location
+        description
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;

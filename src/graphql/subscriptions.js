@@ -37,3 +37,42 @@ export const onDeleteNote = /* GraphQL */ `
     }
   }
 `;
+export const onCreatePlayers = /* GraphQL */ `
+  subscription OnCreatePlayers($filter: ModelSubscriptionPlayersFilterInput) {
+    onCreatePlayers(filter: $filter) {
+      id
+      name
+      gamertag
+      location
+      description
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdatePlayers = /* GraphQL */ `
+  subscription OnUpdatePlayers($filter: ModelSubscriptionPlayersFilterInput) {
+    onUpdatePlayers(filter: $filter) {
+      id
+      name
+      gamertag
+      location
+      description
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeletePlayers = /* GraphQL */ `
+  subscription OnDeletePlayers($filter: ModelSubscriptionPlayersFilterInput) {
+    onDeletePlayers(filter: $filter) {
+      id
+      name
+      gamertag
+      location
+      description
+      createdAt
+      updatedAt
+    }
+  }
+`;
