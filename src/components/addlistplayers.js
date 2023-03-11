@@ -46,7 +46,7 @@ const AddListPlayers = () => {
     const newPlayers = players.filter((player) => player.id !== id);
     
     try {
-      const response = await API.get('deleteplayer', '/1');
+      const response = await API.get('deleteplayer', `/${id}`);
       console.log(response);
     } catch (error) {
       console.log(error);
