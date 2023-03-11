@@ -52,13 +52,13 @@ const AddListPlayers = () => {
     });
   }
   
-  async function fetchHelloWorld() { 
+  async function fetchHelloWorld() {
     try {
-      const response = await API.post('deleteplayer', '/');
-      console.log("IT WORKED!!! ", response);
+      const response = await API.get('deleteplayer', '/1');
+      console.log(response);
     } catch (error) {
-      console.log("Stupid error: ", error);
-    } 
+      console.log(error);
+    }
   }
   
 
