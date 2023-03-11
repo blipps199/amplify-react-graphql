@@ -52,7 +52,7 @@ const AddListPlayers = () => {
     });
   }
   
-  async function fetchHelloWorld() {
+  async function fetchHelloWorld() { 
     try {
       const response = await API.post('deleteplayerapi', '/player/1');
       console.log("IT WORKED!!! ", response);
