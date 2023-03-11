@@ -54,10 +54,10 @@ const AddListPlayers = () => {
   
   async function fetchHelloWorld() {
     try {
-      const response = await API.post('testingapi', '/test');
-      console.log(response);
+      const response = await API.post('deleteplayerapi', '/player/1');
+      console.log("IT WORKED!!! ", response);
     } catch (error) {
-      console.log(error);
+      console.log("Stupid error: ", error);
     }
   }
   

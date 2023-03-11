@@ -17,17 +17,21 @@
         "amplifyreactgraphql803dc0ed": {}
       },
       "api": {
-        "amplifyreactgraphql": {},
-        "testingapi": {}
+        "amplifyreactgraphql": {}
       },
       "storage": {
-        "imagestorage": {}
+        "imagestorage": {},
+        "Playerkcpey24f7ben3ggerxdwh67ddistaging": {
+          "tableName": "Player-kcpey24f7ben3ggerxdwh67ddi-staging",
+          "region": "us-east-1",
+          "arn": "arn:aws:dynamodb:us-east-1:756341275660:table/Player-kcpey24f7ben3ggerxdwh67ddi-staging",
+          "streamArn": "arn:aws:dynamodb:us-east-1:756341275660:table/Player-kcpey24f7ben3ggerxdwh67ddi-staging/stream/2023-03-01T15:43:38.346",
+          "partitionKeyName": "id",
+          "partitionKeyType": "S"
+        }
       },
       "function": {
-        "testfunction": {
-          "deploymentBucketName": "amplify-amplifyf854643ebc294-staging-140118-deployment",
-          "s3Key": "amplify-builds/testfunction-69545144695864302f74-build.zip"
-        }
+        "deleteplayer": {}
       }
     }
   }
