@@ -3,7 +3,7 @@
   "paths": {
     "/test": {
       "name": "/test",
-      "lambdaFunction": "testing",
+      "lambdaFunction": "testfunction",
       "permissions": {
         "setting": "private",
         "auth": [

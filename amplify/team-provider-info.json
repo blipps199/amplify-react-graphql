@@ -17,13 +17,17 @@
         "amplifyreactgraphql803dc0ed": {}
       },
       "api": {
-        "amplifyreactgraphql": {}
+        "amplifyreactgraphql": {},
+        "testingapi": {}
       },
       "storage": {
         "imagestorage": {}
       },
       "function": {
-        "testing": {}
+        "testfunction": {
+          "deploymentBucketName": "amplify-amplifyf854643ebc294-staging-140118-deployment",
+          "s3Key": "amplify-builds/testfunction-4a4a6c68446f4d6e666f-build.zip"
+        }
       }
     }
   }

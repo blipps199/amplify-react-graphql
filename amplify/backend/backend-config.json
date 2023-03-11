@@ -24,7 +24,7 @@
             "Arn"
           ],
           "category": "function",
-          "resourceName": "testing"
+          "resourceName": "testfunction"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -58,28 +58,28 @@
     }
   },
   "function": {
-    "testing": {
+    "testfunction": {
       "build": true,
-      "dependsOn": [
-        {
-          "attributes": [
-            "GraphQLAPIIdOutput",
-            "GraphQLAPIEndpointOutput",
-            "GraphQLAPIKeyOutput"
-          ],
-          "category": "api",
-          "resourceName": "amplifyreactgraphql"
-        },
-        {
-          "attributes": [
-            "UserPoolId"
-          ],
-          "category": "auth",
-          "resourceName": "amplifyreactgraphql803dc0ed"
-        }
-      ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_testfunction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "testfunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_testfunction_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "testfunction"
+        }
+      ]
     }
   },
   "storage": {

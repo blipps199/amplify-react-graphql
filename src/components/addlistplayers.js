@@ -24,7 +24,7 @@ const AddListPlayers = () => {
     );
     setPlayers(playersFromAPI);
   }
-  
+   
   async function createPlayer(event) {
     event.preventDefault();
     const form = new FormData(event.target);
