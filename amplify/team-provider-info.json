@@ -26,7 +26,7 @@
       "function": {
         "testfunction": {
           "deploymentBucketName": "amplify-amplifyf854643ebc294-staging-140118-deployment",
-          "s3Key": "amplify-builds/testfunction-4a4a6c68446f4d6e666f-build.zip"
+          "s3Key": "amplify-builds/testfunction-69545144695864302f74-build.zip"
         }
       }
     }

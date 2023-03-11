@@ -51,9 +51,24 @@ const AddListPlayers = () => {
       variables: { input: { id } },
     });
   }
+  
+  async function fetchHelloWorld() {
+    try {
+      const response = await API.get('testingapi', '/test');
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  
 
   return (
     <Card>
+    
+      <Button variation="link" onClick={() => fetchHelloWorld()}>
+        Testing
+      </Button>
+
       <View as="form" margin="3rem 0" onSubmit={createPlayer}>
         <Heading level={3} margin="0 0 1rem">Add Player</Heading>
         <Flex direction="row" justifyContent="center" alignItems="center">
