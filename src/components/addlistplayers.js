@@ -49,7 +49,7 @@ const AddListPlayers = () => {
     await API.graphql({
       query: deletePlayerMutation,
       variables: { input: { id } },
-    });
+    }); 
   }
 
   return (
