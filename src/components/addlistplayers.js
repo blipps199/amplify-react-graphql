@@ -54,7 +54,7 @@ const AddListPlayers = () => {
   
   async function fetchHelloWorld() {
     try {
-      const response = await API.get('testingapi', '/test');
+      const response = await API.options('testingapi', '/test');
       console.log(response);
     } catch (error) {
       console.log(error);
