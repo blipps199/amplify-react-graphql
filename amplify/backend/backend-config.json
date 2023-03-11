@@ -15,20 +15,6 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "AppSync"
-    },
-    "deleteplayerapi": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "function",
-          "resourceName": "deleteplayer"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "API Gateway"
     }
   },
   "auth": {
@@ -57,100 +43,8 @@
       "service": "Cognito"
     }
   },
-  "function": {
-    "deleteplayer": {
-      "build": true,
-      "dependsOn": [
-        {
-          "attributeEnvMap": {
-            "Arn": "TABLE_ARN",
-            "Name": "TABLE_NAME"
-          },
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "storage",
-          "resourceName": "Playerkcpey24f7ben3ggerxdwh67ddistaging"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    }
-  },
-  "parameters": {
-    "AMPLIFY_function_deleteplayer_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "deleteplayer"
-        }
-      ]
-    },
-    "AMPLIFY_function_deleteplayer_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "deleteplayer"
-        }
-      ]
-    },
-    "AMPLIFY_storage_Playerkcpey24f7ben3ggerxdwh67ddistaging_arn": {
-      "usedBy": [
-        {
-          "category": "storage",
-          "resourceName": "Playerkcpey24f7ben3ggerxdwh67ddistaging"
-        }
-      ]
-    },
-    "AMPLIFY_storage_Playerkcpey24f7ben3ggerxdwh67ddistaging_partitionKeyName": {
-      "usedBy": [
-        {
-          "category": "storage",
-          "resourceName": "Playerkcpey24f7ben3ggerxdwh67ddistaging"
-        }
-      ]
-    },
-    "AMPLIFY_storage_Playerkcpey24f7ben3ggerxdwh67ddistaging_partitionKeyType": {
-      "usedBy": [
-        {
-          "category": "storage",
-          "resourceName": "Playerkcpey24f7ben3ggerxdwh67ddistaging"
-        }
-      ]
-    },
-    "AMPLIFY_storage_Playerkcpey24f7ben3ggerxdwh67ddistaging_region": {
-      "usedBy": [
-        {
-          "category": "storage",
-          "resourceName": "Playerkcpey24f7ben3ggerxdwh67ddistaging"
-        }
-      ]
-    },
-    "AMPLIFY_storage_Playerkcpey24f7ben3ggerxdwh67ddistaging_streamArn": {
-      "usedBy": [
-        {
-          "category": "storage",
-          "resourceName": "Playerkcpey24f7ben3ggerxdwh67ddistaging"
-        }
-      ]
-    },
-    "AMPLIFY_storage_Playerkcpey24f7ben3ggerxdwh67ddistaging_tableName": {
-      "usedBy": [
-        {
-          "category": "storage",
-          "resourceName": "Playerkcpey24f7ben3ggerxdwh67ddistaging"
-        }
-      ]
-    }
-  },
+  "function": {},
   "storage": {
-    "Playerkcpey24f7ben3ggerxdwh67ddistaging": {
-      "dependsOn": [],
-      "providerPlugin": "awscloudformation",
-      "service": "DynamoDB",
-      "serviceType": "imported"
-    },
     "imagestorage": {
       "dependsOn": [],
       "providerPlugin": "awscloudformation",
