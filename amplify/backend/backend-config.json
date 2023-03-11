@@ -79,6 +79,22 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_deleteplayer_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "deleteplayer"
+        }
+      ]
+    },
+    "AMPLIFY_function_deleteplayer_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "deleteplayer"
+        }
+      ]
+    },
     "AMPLIFY_storage_Playerkcpey24f7ben3ggerxdwh67ddistaging_arn": {
       "usedBy": [
         {
