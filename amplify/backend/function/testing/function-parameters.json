@@ -1,7 +1,12 @@
 {
   "permissions": {
-    "storage": {
-      "Playerkcpey24f7ben3ggerxdwh67ddistaging": [
+    "api": {
+      "amplifyreactgraphql": [
+        "Query"
+      ]
+    },
+    "auth": {
+      "amplifyreactgraphql803dc0ed": [
         "create",
         "read",
         "update",

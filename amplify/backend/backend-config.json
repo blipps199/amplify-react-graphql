@@ -16,7 +16,7 @@
       "providerPlugin": "awscloudformation",
       "service": "AppSync"
     },
-    "deleteplayerapi": {
+    "testingapi": {
       "dependsOn": [
         {
           "attributes": [
@@ -24,7 +24,7 @@
             "Arn"
           ],
           "category": "function",
-          "resourceName": "deleteplayer"
+          "resourceName": "testing"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -58,29 +58,24 @@
     }
   },
   "function": {
-    "deleteplayer": {
+    "testing": {
       "build": true,
       "dependsOn": [
         {
-          "attributeEnvMap": {
-            "Arn": "TABLE_ARN",
-            "Name": "TABLE_NAME"
-          },
           "attributes": [
-            "Name",
-            "Arn"
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
           ],
-          "category": "storage",
-          "resourceName": "Playerkcpey24f7ben3ggerxdwh67ddistaging"
+          "category": "api",
+          "resourceName": "amplifyreactgraphql"
         },
         {
           "attributes": [
-            "Name",
-            "Arn",
-            "StreamArn"
+            "UserPoolId"
           ],
-          "category": "storage",
-          "resourceName": "Playerkcpey24f7ben3ggerxdwh67ddistaging"
+          "category": "auth",
+          "resourceName": "amplifyreactgraphql803dc0ed"
         }
       ],
       "providerPlugin": "awscloudformation",

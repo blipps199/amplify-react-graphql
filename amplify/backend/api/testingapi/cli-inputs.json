@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "paths": {
+    "/test": {
+      "name": "/test",
+      "lambdaFunction": "testing",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    }
+  }
+}
