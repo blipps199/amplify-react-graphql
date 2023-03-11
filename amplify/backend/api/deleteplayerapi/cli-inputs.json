@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/player/{id}": {
+      "name": "/player/{id}",
+      "lambdaFunction": "deleteplayer",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

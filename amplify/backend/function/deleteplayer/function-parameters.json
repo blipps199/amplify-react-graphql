@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "storage": {
+      "Playerkcpey24f7ben3ggerxdwh67ddistaging": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}
