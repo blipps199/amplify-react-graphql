@@ -64,6 +64,24 @@
       "service": "Lambda"
     }
   },
+  "parameters": {
+    "AMPLIFY_function_deleteplayer_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "deleteplayer"
+        }
+      ]
+    },
+    "AMPLIFY_function_deleteplayer_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "deleteplayer"
+        }
+      ]
+    }
+  },
   "storage": {
     "imagestorage": {
       "dependsOn": [],
