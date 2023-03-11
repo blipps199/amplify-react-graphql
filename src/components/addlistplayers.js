@@ -42,15 +42,26 @@ const AddListPlayers = () => {
     event.target.reset();
   }
 
-  async function deletePlayer({ id, name }) {
-    const newPlayers = players.filter((player) => player.id !== id);
-    setPlayers(newPlayers);
-    await Storage.remove(name);
-    await API.graphql({
-      query: deletePlayerMutation,
-      variables: { input: { id } },
-    }); 
+  async function deletePlayer(id) {
+    try {
+      const response = await API.del('deletepplayerapi', `/deleteplayerapi/${id}`);
+      console.log(response);
+      // handle response
+    } catch (error) {
+      console.error(error);
+      // handle error
+    }
   }
+
+  // async function deletePlayer({ id, name }) {
+  //   const newPlayers = players.filter((player) => player.id !== id);
+  //   setPlayers(newPlayers);
+  //   await Storage.remove(name);
+  //   await API.graphql({
+  //     query: deletePlayerMutation,
+  //     variables: { input: { id } },
+  //   }); 
+  // }
 
   return (
     <Card>

@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/deleteplayerapi/{id}": {
+      "name": "/deleteplayerapi/{id}",
+      "lambdaFunction": "deleteplayer",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "lambdaLayers": [],
+  "permissions": {
+    "api": {
+      "amplifyreactgraphql": [
+        "Query",
+        "Mutation"
+      ]
+    },
+    "auth": {
+      "amplifyreactgraphql803dc0ed": [
+        "delete"
+      ]
+    },
+    "storage": {
+      "Playerkcpey24f7ben3ggerxdwh67ddistaging": [
+        "delete"
+      ],
+      "Player:@model(appsync)": [
+        "delete"
+      ]
+    }
+  }
+}

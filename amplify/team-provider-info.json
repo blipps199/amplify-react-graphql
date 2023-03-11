@@ -9,17 +9,26 @@
       "UnauthRoleName": "amplify-amplifyf854643ebc294-staging-140118-unauthRole",
       "StackName": "amplify-amplifyf854643ebc294-staging-140118",
       "StackId": "arn:aws:cloudformation:us-east-1:756341275660:stack/amplify-amplifyf854643ebc294-staging-140118/5fe3acd0-b770-11ed-8bf5-0ae9f6af4563",
-      "AmplifyAppId": "d3jcbk48btvtpz"
+      "AmplifyAppId": "d3jcbk48btvtpz",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-amplifyf854643ebc294-staging-140118-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "auth": {
         "amplifyreactgraphql803dc0ed": {}
       },
       "api": {
-        "amplifyreactgraphql": {}
+        "amplifyreactgraphql": {},
+        "deletepplayerapi": {}
       },
       "storage": {
-        "imagestorage": {}
+        "imagestorage": {},
+        "Playerkcpey24f7ben3ggerxdwh67ddistaging": {}
+      },
+      "function": {
+        "deleteplayer": {
+          "deploymentBucketName": "amplify-amplifyf854643ebc294-staging-140118-deployment",
+          "s3Key": "amplify-builds/deleteplayer-4e41527a64553931574a-build.zip"
+        }
       }
     }
   }
