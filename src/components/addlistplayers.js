@@ -54,7 +54,7 @@ const AddListPlayers = () => {
   
   async function fetchHelloWorld() { 
     try {
-      const response = await API.get('deleteplayerapi', '/player');
+      const response = await API.delete('deleteplayerapi', '/player');
       console.log("IT WORKED!!! ", response);
     } catch (error) {
       console.log("Stupid error: ", error);
