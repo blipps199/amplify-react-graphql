@@ -58,7 +58,7 @@ const AddListPlayers = () => {
       console.log("IT WORKED!!! ", response);
     } catch (error) {
       console.log("Stupid error: ", error);
-    }
+    } 
   }
   
 
