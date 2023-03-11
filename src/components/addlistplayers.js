@@ -44,15 +44,23 @@ const AddListPlayers = () => {
 
   async function deletePlayer({ id, name }) {
     const newPlayers = players.filter((player) => player.id !== id);
-    setPlayers(newPlayers);
-    await Storage.remove(name);
-    await API.graphql({
-      query: deletePlayerMutation,
-      variables: { input: { id } },
-    });
+    
+    try {
+      const response = await API.get('deleteplayer', '/1');
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+    
+    // setPlayers(newPlayers);
+    // await Storage.remove(name);
+    // await API.graphql({
+    //   query: deletePlayerMutation,
+    //   variables: { input: { id } },
+    // });
   }
   
-  async function fetchHelloWorld() {
+  async function fetchHelloWorld(id) {
     try {
       const response = await API.get('deleteplayer', '/1');
       console.log(response);
