@@ -17,18 +17,11 @@
         "amplifyreactgraphql803dc0ed": {}
       },
       "api": {
-        "amplifyreactgraphql": {},
-        "deletepplayerapi": {}
+        "amplifyreactgraphql": {}
       },
       "storage": {
         "imagestorage": {},
         "Playerkcpey24f7ben3ggerxdwh67ddistaging": {}
-      },
-      "function": {
-        "deleteplayer": {
-          "deploymentBucketName": "amplify-amplifyf854643ebc294-staging-140118-deployment",
-          "s3Key": "amplify-builds/deleteplayer-4e41527a64553931574a-build.zip"
-        }
       }
     }
   }
