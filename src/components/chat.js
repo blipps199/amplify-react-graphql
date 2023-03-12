@@ -10,13 +10,12 @@ import { Auth } from 'aws-amplify';
 import { onCreateChat } from '../graphql/subscriptions';
 
 import { BsFillSendFill } from 'react-icons/bs';
-import InputEmoji from 'react-input-emoji'
+import EmojiPicker from 'emoji-picker-react';
 
 const Chat = () => {
   const [chats, setChats] = useState([]);
   const [username, setUsername] = useState(null);
   const [lastUsername, setLastUsername] = useState('');
-  const [ text, setText ] = useState('')
 
   useEffect(() => {
     async function getUsername() {
@@ -99,14 +98,13 @@ const Chat = () => {
             <View as="div" style={{ clear: 'both' }}></View>
             <View
               as="div"
-              className="msg-container"
               key={chat.id || chat.username}
               borderRadius="12px"
               maxWidth="100%"
               padding="10px"
               minWidth="20%"
               maxWidth="65%"
-              style={{ float: chat.username === username ? 'right' : 'left', backgroundColor: chat.username === username ? '#34C759' : '#E9EAEB', borderBottomLeftRadius: chat.username === username ? '12px' : '0px', borderBottomRightRadius: chat.username != username ? '12px' : '0px', }}
+              style={{ float: chat.username === username ? 'right' : 'left', backgroundColor: chat.username === username ? '#34C759' : '#E9EAEB', borderBottomLeftRadius: chat.username === username ? '12px' : '0', borderBottomRightRadius: chat.username != username ? '12px' : '0', }}
               className={chat.username === username ? 'msg-content msg-content-right' : 'msg-content msg-content-left'}
             >
               <span>
@@ -115,19 +113,20 @@ const Chat = () => {
               <p className="msg-timestamp">
                 {chat.timestamp}
               </p>
-              <div class="chat-bubble-arrow"></div>
             </View>
           </View>
         )
       })}
     </ScrollView>
     <Flex as="form" margin="15px 0 0 0" direction="row" justifyContent="center" alignItems="center"  onSubmit={createChat}>
-
-      <InputEmoji
+      <TextField
         name="message"
-        value={text}
-        cleanOnEnter
-        placeholder="Type a message"
+        placeholder="Enter Message"
+        label="Enter Message"
+        labelHidden
+        variation="quiet"
+        width="45%"
+        required
       />
       <Button type="submit" variation="primary">
         <BsFillSendFill />

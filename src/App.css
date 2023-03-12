@@ -37,6 +37,11 @@
   }
 }
 
+.msg-container {
+    display: flex !important;
+  flex-direction: column !important;
+}
+
 
 .scroller {
   height: 40vh !important;
@@ -44,7 +49,6 @@
   margin: 1rem auto !important;
   padding: 10px !important;
 }
-
 
 .msg-content {
   position: relative;
