@@ -1,20 +1,23 @@
-import { API } from 'aws-amplify';
 
+
+/**
+ * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
+ */
 exports.handler = async (event) => {
-  const { id, name } = event;
-  try {
-    const response = await API.get('deleteplayer', `/${id}`);
-    console.log(response);
-    console.log('Name: ', name);
+    console.log(`EVENT: ${JSON.stringify(event)}`);
+    
+    const id = event.pathParameters.id;
+    
+    console.log(id);
+    
     return {
-      statusCode: 200,
-      body: JSON.stringify({ message: 'Player deleted successfully' })
+        statusCode: 200,
+         headers: {
+             "Access-Control-Allow-Origin": "*",
+             "Access-Control-Allow-Headers": "*"
+         }, 
+        body: JSON.stringify({
+          message: `Received ID: ${id}`
+        })
     };
-  } catch (error) {
-    console.log(error);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ message: 'Failed to delete player' })
-    };
-  }
 };

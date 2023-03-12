@@ -26,7 +26,7 @@
       "function": {
         "deleteplayer": {
           "deploymentBucketName": "amplify-amplifyf854643ebc294-staging-140118-deployment",
-          "s3Key": "amplify-builds/deleteplayer-58495365455137583548-build.zip"
+          "s3Key": "amplify-builds/deleteplayer-63703548792f426b5257-build.zip"
         }
       }
     }
