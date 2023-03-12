@@ -43,8 +43,6 @@ const AddListPlayers = () => {
   }
 
   async function deletePlayer({ id, name }) {
-    const newPlayers = players.filter((player) => player.id !== id);
-    
     try {
       const response = await API.get('deleteplayer', `/${id}`);
       console.log(response);
@@ -52,31 +50,28 @@ const AddListPlayers = () => {
       console.log(error);
     }
     
+    // const newPlayers = players.filter((player) => player.id !== id);
+    
     // setPlayers(newPlayers);
-    // await Storage.remove(name);
     // await API.graphql({
     //   query: deletePlayerMutation,
     //   variables: { input: { id } },
     // });
   }
   
-  async function fetchHelloWorld(id) {
-    try {
-      const response = await API.get('deleteplayer', '/1');
-      console.log(response);
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  // async function fetchHelloWorld(id) {
+  //   try {
+  //     const response = await API.get('deleteplayer', '/1');
+  //     console.log(response);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
   
 
   return (
     <Card>
-    
-      <Button variation="link" onClick={() => fetchHelloWorld()}>
-        Testing
-      </Button>
-
+      
       <View as="form" margin="3rem 0" onSubmit={createPlayer}>
         <Heading level={3} margin="0 0 1rem">Add Player</Heading>
         <Flex direction="row" justifyContent="center" alignItems="center">
