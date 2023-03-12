@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { API } from 'aws-amplify';
-import { Button, Flex, Heading, Text, TextField, View, Card } from '@aws-amplify/ui-react';
+import { Button, Flex, Heading, Text, TextField, View, Card, ScrollView } from '@aws-amplify/ui-react';
 import { listChats } from "../graphql/queries";
 import moment from 'moment';
 import {
@@ -72,15 +72,16 @@ const Chat = () => {
   return (
     <Card>
       <Heading level={4}>Three Kings Messenger</Heading>
-      <View as="form" margin="1rem 0" onSubmit={createChat}>
-          {chats.map((chat) => (
-              <Flex key={chat.id || chat.username} direction="row" justifyContent="center" alignItems="center">
-                  <Text as="strong" fontWeight={700}>{chat.username}</Text>
-                  <Text as="span">{chat.message}</Text>
-                  <Text as="span">{chat.timestamp}</Text>
-              </Flex>
-          ))}
-        <Flex margin="15px 0 0 0" direction="row" justifyContent="center" alignItems="center">
+        <ScrollView height="40vh" margin="1rem 0">
+            {chats.map((chat) => (
+                <Flex key={chat.id || chat.username} direction="row" justifyContent="center" alignItems="center">
+                    <Text as="strong" fontWeight={700}>{chat.username}</Text>
+                    <Text as="span">{chat.message}</Text>
+                    <Text as="span">{chat.timestamp}</Text>
+                </Flex>
+            ))}
+        </ScrollView >
+        <Flex as="form" margin="15px 0 0 0" direction="row" justifyContent="center" alignItems="center"  onSubmit={createChat}>
           <TextField
             name="message"
             placeholder="Enter Message"
@@ -93,7 +94,6 @@ const Chat = () => {
             Send Message
           </Button>
         </Flex>
-      </View>
     </Card>
     );
 }
