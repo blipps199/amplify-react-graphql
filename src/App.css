@@ -42,3 +42,15 @@
   display: flex !important;
   flex-direction: column-reverse !important;
 }
+
+.msg-container {
+  position: relative;
+}
+
+.msg-timestamp {
+  position: absolute;
+  margin: 0;
+  top: 0;
+  right: 10px;
+  font-size: 10px;
+}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { API } from 'aws-amplify';
-import { Button, Flex, Heading, Text, TextField, View, Card, ScrollView } from '@aws-amplify/ui-react';
+import { Button, Flex, Heading, Text, TextField, Card, ScrollView, Badge, View } from '@aws-amplify/ui-react';
 import { listChats } from "../graphql/queries";
 import moment from 'moment';
 import {
@@ -12,6 +12,7 @@ import { onCreateChat } from '../graphql/subscriptions';
 const Chat = () => {
   const [chats, setChats] = useState([]);
   const [username, setUsername] = useState(null);
+  const [lastUsername, setLastUsername] = useState('');
 
   useEffect(() => {
     async function getUsername() {
@@ -43,7 +44,7 @@ const Chat = () => {
     event.preventDefault();
     const form = new FormData(event.target);
     const date = new Date();
-    const formattedDate = `${date.toLocaleString('default', { month: 'short' })}. ${date.getDate()}, ${date.getFullYear()} ${formatAMPM(date)}`;
+    const formattedDate = formatAMPM(date);
     const data = {
       username: username,
       message: form.get("message"),
@@ -57,44 +58,81 @@ const Chat = () => {
   }
 
   function formatAMPM(date) {
-    let hours = date.getHours();
+    let hours = date.getHours() % 12 || 12;
     let minutes = date.getMinutes();
     const ampm = hours >= 12 ? 'pm' : 'am';
-    hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    const strTime = hours + ':' + minutes + ' ' + ampm;
-    return strTime;
+    const month = date.getMonth() + 1; // month is zero-based, add 1 to get the actual month number
+    const day = date.getDate();
+    const year = date.getFullYear().toString().slice(-2); // get last 2 digits of the year
+  
+    const dateString = `${month}/${day}/${year}`;
+    const timeString = `${hours}:${minutes < 10 ? '0' : ''}${minutes} ${ampm}`;
+    return `${dateString} ${timeString}`;
   }
 
-  
-
   return (
-    <Card>
-      <Heading level={4}>Three Kings Messenger</Heading>
-        <ScrollView height="40vh" margin="1rem 0">
-            {chats.map((chat) => (
-                <Flex key={chat.id || chat.username} direction="row" justifyContent="center" alignItems="center">
-                    <Text as="strong" fontWeight={700}>{chat.username}</Text>
-                    <Text as="span">{chat.message}</Text>
-                    <Text as="span">{chat.timestamp}</Text>
-                </Flex>
-            ))}
-        </ScrollView >
-        <Flex as="form" margin="15px 0 0 0" direction="row" justifyContent="center" alignItems="center"  onSubmit={createChat}>
-          <TextField
-            name="message"
-            placeholder="Enter Message"
-            label="Enter Message"
-            labelHidden
-            variation="quiet"
-            required
-          />
-          <Button type="submit" variation="primary">
-            Send Message
-          </Button>
-        </Flex>
-    </Card>
+  <Card>
+    <Heading level={4}>Three Kings Messenger</Heading>
+    <Badge variation="info">
+      Badge
+    </Badge>
+    <Badge variation="info">
+      Badge
+    </Badge>
+    <Badge variation="info">
+      Badge
+    </Badge>
+    <ScrollView height="40vh" maxWidth="50%" margin="1rem auto" onSubmit={createChat}>
+      {chats.map((chat, index) => {
+        const isFirstInGroup = index === 0 || chat.username !== chats[index - 1].username;
+        return (
+          <View as="div">
+            {isFirstInGroup && (
+              <Text as="strong" style={{ float: chat.username === username ? 'right' : 'left', clear: 'both' }} fontWeight={700}>
+                {chat.username}
+              </Text>
+            )}
+            <View as="div" style={{ clear: 'both' }}></View>
+            <View
+              as="div"
+              className="msg-container"
+              key={chat.id || chat.username}
+              backgroundColor="lightgray"
+              borderRadius="6px"
+              border="1px solid var(--amplify-colors-black)"
+              color="var(--amplify-colors-blue-60)"
+              
+              maxWidth="100%"
+              padding="10px"
+              minWidth="20%"
+              maxWidth="65%"
+              style={{ float: chat.username === username ? 'right' : 'left' }}
+            >
+              <Text variation="warning" as="span">
+                {chat.message}
+              </Text>
+              <p className="msg-timestamp">
+                {chat.timestamp}
+              </p>
+            </View>
+          </View>
+        )
+      })}
+    </ScrollView>
+    <Flex as="form" margin="15px 0 0 0" direction="row" justifyContent="center" alignItems="center"  onSubmit={createChat}>
+      <TextField
+        name="message"
+        placeholder="Enter Message"
+        label="Enter Message"
+        labelHidden
+        variation="quiet"
+        required
+      />
+      <Button type="submit" variation="primary">
+        Send Message
+      </Button>
+    </Flex>
+  </Card>
     );
 }
 
