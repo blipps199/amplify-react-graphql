@@ -9,10 +9,14 @@ import {
 import { Auth } from 'aws-amplify';
 import { onCreateChat } from '../graphql/subscriptions';
 
+import { BsFillSendFill } from 'react-icons/bs';
+import InputEmoji from 'react-input-emoji'
+
 const Chat = () => {
   const [chats, setChats] = useState([]);
   const [username, setUsername] = useState(null);
   const [lastUsername, setLastUsername] = useState('');
+  const [ text, setText ] = useState('')
 
   useEffect(() => {
     async function getUsername() {
@@ -60,7 +64,7 @@ const Chat = () => {
   function formatAMPM(date) {
     let hours = date.getHours() % 12 || 12;
     let minutes = date.getMinutes();
-    const ampm = hours >= 12 ? 'pm' : 'am';
+    const ampm = hours >= 12 ? 'am' : 'pm';
     const month = date.getMonth() + 1; // month is zero-based, add 1 to get the actual month number
     const day = date.getDate();
     const year = date.getFullYear().toString().slice(-2); // get last 2 digits of the year
@@ -82,7 +86,7 @@ const Chat = () => {
     <Badge variation="info">
       Badge
     </Badge>
-    <ScrollView height="40vh" maxWidth="50%" margin="1rem auto" onSubmit={createChat}>
+    <ScrollView className="scroller" onSubmit={createChat}>
       {chats.map((chat, index) => {
         const isFirstInGroup = index === 0 || chat.username !== chats[index - 1].username;
         return (
@@ -97,39 +101,36 @@ const Chat = () => {
               as="div"
               className="msg-container"
               key={chat.id || chat.username}
-              backgroundColor="lightgray"
-              borderRadius="6px"
-              border="1px solid var(--amplify-colors-black)"
-              color="var(--amplify-colors-blue-60)"
-              
+              borderRadius="12px"
               maxWidth="100%"
               padding="10px"
               minWidth="20%"
               maxWidth="65%"
-              style={{ float: chat.username === username ? 'right' : 'left' }}
+              style={{ float: chat.username === username ? 'right' : 'left', backgroundColor: chat.username === username ? '#34C759' : '#E9EAEB', borderBottomLeftRadius: chat.username === username ? '12px' : '0px', borderBottomRightRadius: chat.username != username ? '12px' : '0px', }}
+              className={chat.username === username ? 'msg-content msg-content-right' : 'msg-content msg-content-left'}
             >
-              <Text variation="warning" as="span">
+              <span>
                 {chat.message}
-              </Text>
+              </span>
               <p className="msg-timestamp">
                 {chat.timestamp}
               </p>
+              <div class="chat-bubble-arrow"></div>
             </View>
           </View>
         )
       })}
     </ScrollView>
     <Flex as="form" margin="15px 0 0 0" direction="row" justifyContent="center" alignItems="center"  onSubmit={createChat}>
-      <TextField
+
+      <InputEmoji
         name="message"
-        placeholder="Enter Message"
-        label="Enter Message"
-        labelHidden
-        variation="quiet"
-        required
+        value={text}
+        cleanOnEnter
+        placeholder="Type a message"
       />
       <Button type="submit" variation="primary">
-        Send Message
+        <BsFillSendFill />
       </Button>
     </Flex>
   </Card>
