@@ -7,11 +7,11 @@ import {
   createChat as createChatMutation,
 } from "../graphql/mutations";
 import { Auth } from 'aws-amplify';
+import { onCreateChat } from '../graphql/subscriptions';
 
 const Chat = () => {
   const [chats, setChats] = useState([]);
   const [username, setUsername] = useState(null);
-  const sortedChats = chats.sort((a, b) => moment(a.timestamp, 'MMM. D, YYYY h:mm a') - moment(b.timestamp, 'MMM. D, YYYY h:mm a'));
 
   useEffect(() => {
     async function getUsername() {
@@ -22,19 +22,22 @@ const Chat = () => {
   }, []);
 
   useEffect(() => {
+    async function fetchChats() {
+      const apiData = await API.graphql({ query: listChats });
+      const chatsFromAPI = apiData.data.listChats.items;
+      // sort chats by timestamp
+      const sortedChats = chatsFromAPI.sort((a, b) => moment(b.timestamp, 'MMM. D, YYYY h:mm a') - moment(a.timestamp, 'MMM. D, YYYY h:mm a'));
+      setChats(sortedChats);
+    }
     fetchChats();
+    const subscription = API.graphql({ query: onCreateChat }).subscribe({
+      next: (eventData) => {
+        const chat = eventData.value.data.onCreateChat;
+        setChats((prevChats) => [...prevChats, chat]);
+      },
+    });
+    return () => subscription.unsubscribe();
   }, []);
-
-  async function fetchChats() {
-    const apiData = await API.graphql({ query: listChats });
-    const chatsFromAPI = apiData.data.listChats.items;
-     await Promise.all(
-        chatsFromAPI.map(async (chat) => {
-          return chat;
-        })
-      );
-    setChats(chatsFromAPI);
-  }
 
   async function createChat(event) {
     event.preventDefault();
@@ -50,7 +53,6 @@ const Chat = () => {
       query: createChatMutation,
       variables: { input: data },
     });
-    fetchChats();
     event.target.reset();
   }
 
@@ -71,7 +73,7 @@ const Chat = () => {
     <Card>
       <Heading level={4}>Three Kings Messenger</Heading>
       <View as="form" margin="1rem 0" onSubmit={createChat}>
-          {sortedChats.map((chat) => (
+          {chats.map((chat) => (
               <Flex key={chat.id || chat.username} direction="row" justifyContent="center" alignItems="center">
                   <Text as="strong" fontWeight={700}>{chat.username}</Text>
                   <Text as="span">{chat.message}</Text>
