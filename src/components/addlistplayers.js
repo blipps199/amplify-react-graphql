@@ -42,22 +42,22 @@ const AddListPlayers = () => {
     event.target.reset();
   }
 
-  async function deletePlayer({ id }) {
-    try {
-      const response = await API.get('deleteplayer', `/${id}`);
-      console.log(response);
-    } catch (error) {
-      console.log(error);
-    }
+  async function deletePlayer({ id, name }) {
+    // try {
+    //   const response = await API.get('deleteplayer', `/${id}`);
+    //   console.log(response);
+    // } catch (error) {
+    //   console.log(error);
+    // }
     
-    //const newPlayers = players.filter((player) => player.id !== id);
+    const newPlayers = players.filter((player) => player.id !== id);
     
-    // setPlayers(newPlayers);
-    // await Storage.remove(name);
-    // await API.graphql({
-    //   query: deletePlayerMutation,
-    //   variables: { input: { id } },
-    // });
+    setPlayers(newPlayers);
+    await Storage.remove(name);
+    await API.graphql({
+      query: deletePlayerMutation,
+      variables: { input: { id } },
+    });
   }
   
 
