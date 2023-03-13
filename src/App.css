@@ -37,12 +37,6 @@
   }
 }
 
-.msg-container {
-    display: flex !important;
-  flex-direction: column !important;
-}
-
-
 .scroller {
   height: 40vh !important;
   max-width: 50% !important;
@@ -86,4 +80,28 @@
   top: 0;
   left: 10px;
   color: #fff !important;
+}
+
+.search-field {
+  width: 40% !important;
+}
+
+
+
+/*Responsive*/
+
+@media only screen and (max-width: 991px) {
+  .scroller {
+    height: 60vh !important;
+    max-width: 100% !important;
+  }
+  
+  .msg-content {
+    min-width: 30% !important;
+  }
+  
+  .search-field {
+    width: 85% !important;
+  }
+  
 }

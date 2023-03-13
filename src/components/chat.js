@@ -84,7 +84,7 @@ const Chat = () => {
       Badge
     </Badge>
     <ScrollView className="scroller" onSubmit={createChat}>
-      {chats.map((chat, index) => {
+      {chats.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp)).map((chat, index) => {
         const isFirstInGroup = index === 0 || chat.username !== chats[index - 1].username;
         return (
           <View as="div">
@@ -118,12 +118,12 @@ const Chat = () => {
     </ScrollView>
     <Flex as="form" margin="15px 0 0 0" direction="row" justifyContent="center" alignItems="center"  onSubmit={createChat}>
       <TextField
+        className="search-field"
         name="message"
         placeholder="Enter Message"
         label="Enter Message"
         labelHidden
         variation="quiet"
-        width="45%"
         required
       />
       <Button type="submit" variation="primary">
