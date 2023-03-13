@@ -124,6 +124,7 @@ const Chat = () => {
         label="Enter Message"
         labelHidden
         variation="quiet"
+        width="45%"
         required
       />
       <Button type="submit" variation="primary">
