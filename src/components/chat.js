@@ -18,6 +18,7 @@ const Chat = () => {
   useEffect(() => {
     async function getUsername() {
       const result = await Auth.currentUserInfo();
+      console.log("User Info: ", result);
       setUsername(result.username);
     }
     getUsername();
