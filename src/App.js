@@ -31,7 +31,7 @@ const App = ({ signOut }) => {
     getUsername();
   }, []);
   
-  const [showComponents, setShowComponents] = useState([true, false, false]);
+  const [showComponents, setShowComponents] = useState([false, false, true]);
 
   const toggleComponent = (index) => {
     const newShowComponents = showComponents.map((show, i) => {
@@ -57,14 +57,14 @@ const App = ({ signOut }) => {
             <Flex alignItems="center">
               <p>Hello, {username}!</p>
               <Menu menuAlign="end">
+                <MenuItem onClick={() => toggleComponent(2)}>
+                  Chat
+                </MenuItem>
                 <MenuItem onClick={() => toggleComponent(0)}>
                   Players
                 </MenuItem>
                 <MenuItem onClick={() => toggleComponent(1)}>
                   Games
-                </MenuItem>
-                <MenuItem onClick={() => toggleComponent(2)}>
-                  Chat
                 </MenuItem>
                 <Divider />
                 <MenuItem onClick={signOut}>
@@ -75,9 +75,9 @@ const App = ({ signOut }) => {
           </Flex>
         </Card>
         
+        {showComponents[2] && <Chat/>}
         {showComponents[0] && <AddListPlayers/>}
         {showComponents[1] && <AddListGames/>}
-        {showComponents[2] && <Chat/>}
       </Grid>
 
     </View>

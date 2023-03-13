@@ -10,12 +10,10 @@ import { Auth } from 'aws-amplify';
 import { onCreateChat } from '../graphql/subscriptions';
 
 import { BsFillSendFill } from 'react-icons/bs';
-import EmojiPicker from 'emoji-picker-react';
 
 const Chat = () => {
   const [chats, setChats] = useState([]);
   const [username, setUsername] = useState(null);
-  const [lastUsername, setLastUsername] = useState('');
 
   useEffect(() => {
     async function getUsername() {
@@ -104,7 +102,7 @@ const Chat = () => {
               padding="10px"
               minWidth="20%"
               maxWidth="65%"
-              style={{ float: chat.username === username ? 'right' : 'left', backgroundColor: chat.username === username ? '#34C759' : '#E9EAEB', borderBottomLeftRadius: chat.username === username ? '12px' : '0', borderBottomRightRadius: chat.username != username ? '12px' : '0', }}
+              style={{ float: chat.username === username ? 'right' : 'left', backgroundColor: chat.username === username ? '#34C759' : '#E9EAEB'}}
               className={chat.username === username ? 'msg-content msg-content-right' : 'msg-content msg-content-left'}
             >
               <span>

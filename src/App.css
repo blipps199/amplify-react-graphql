@@ -58,11 +58,13 @@
 .msg-content-left {
   color: #000 !important;
   text-align: left !important;
+  border-bottom-left-radius: 0 !important;
 }
 
 .msg-content-right {
   color: #fff !important;
   text-align: left !important;
+  border-bottom-right-radius: 0 !important;
 }
 
 .msg-timestamp {
