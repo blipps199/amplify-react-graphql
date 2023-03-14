@@ -37,6 +37,14 @@
   }
 }
 
+
+/*Header*/
+.navbar .amplify-text {
+  cursor: pointer;
+}
+
+
+
 .scroller {
   height: 40vh !important;
   max-width: 50% !important;

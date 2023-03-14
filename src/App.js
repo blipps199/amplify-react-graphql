@@ -14,6 +14,10 @@ import {
 } from '@aws-amplify/ui-react';
 import { Auth } from 'aws-amplify';
 
+import {
+ NavBar 
+} from './ui-components';
+
 import AddListPlayers from './components/addlistplayers'
 import AddListGames from './components/addlistgames'
 import Chat from './components/chat'
@@ -46,11 +50,23 @@ const App = ({ signOut }) => {
   
   return (
     <View className="App">
+    
+      <NavBar
+        className="navbar"
+        overrides={{
+          Chat: { onClick: () => toggleComponent(2) },
+          Players: { onClick: () => toggleComponent(0) },
+          Games: { onClick: () => toggleComponent(1) }
+        }}
+      />
+      
+      
       <Grid
         columnGap="0.5rem"
         rowGap="0.5rem"
         templateRows="1fr"
       >
+      { /*
         <Card>
           <Flex direction="row" justifyContent="space-between" alignItems="center">
             <Heading level={1}>Three Kings</Heading>
@@ -74,11 +90,14 @@ const App = ({ signOut }) => {
             </Flex>
           </Flex>
         </Card>
-        
+      */}
+      
         {showComponents[2] && <Chat/>}
         {showComponents[0] && <AddListPlayers/>}
         {showComponents[1] && <AddListGames/>}
+      
       </Grid>
+      
 
     </View>
   );
