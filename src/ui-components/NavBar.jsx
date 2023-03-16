@@ -6,10 +6,16 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import {
+  getOverrideProps,
+  useAuthSignOutAction,
+} from "@aws-amplify/ui-react/internal";
 import { Flex, Icon, Image, Text, View } from "@aws-amplify/ui-react";
 export default function NavBar(props) {
   const { overrides, ...rest } = props;
+  const hiCommalippsOneNineNineExclamationMarkOnClick = useAuthSignOutAction({
+    global: false,
+  });
   return (
     <Flex
       gap="20px"
@@ -157,6 +163,28 @@ export default function NavBar(props) {
           children="Games"
           {...getOverrideProps(overrides, "Games")}
         ></Text>
+        <Text
+          fontFamily="Inter"
+          fontSize="16px"
+          fontWeight="400"
+          color="rgba(0,0,0,1)"
+          lineHeight="24px"
+          textAlign="left"
+          display="block"
+          direction="column"
+          justifyContent="unset"
+          letterSpacing="0.01px"
+          width="unset"
+          height="unset"
+          gap="unset"
+          alignItems="unset"
+          shrink="0"
+          position="relative"
+          padding="0px 0px 0px 0px"
+          whiteSpace="pre-wrap"
+          children="Xbox"
+          {...getOverrideProps(overrides, "Xbox")}
+        ></Text>
       </Flex>
       <Flex
         gap="32px"
@@ -190,6 +218,9 @@ export default function NavBar(props) {
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
           children="Hi, lipps199!"
+          onClick={() => {
+            hiCommalippsOneNineNineExclamationMarkOnClick();
+          }}
           {...getOverrideProps(overrides, "Hi, lipps199!")}
         ></Text>
         <View

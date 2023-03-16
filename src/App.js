@@ -21,6 +21,7 @@ import {
 import AddListPlayers from './components/addlistplayers'
 import AddListGames from './components/addlistgames'
 import Chat from './components/chat'
+import Xbox from './components/xbox'
 
 const App = ({ signOut }) => {
 
@@ -35,7 +36,7 @@ const App = ({ signOut }) => {
     getUsername();
   }, []);
   
-  const [showComponents, setShowComponents] = useState([false, false, true]);
+  const [showComponents, setShowComponents] = useState([false, false, true, false]);
 
   const toggleComponent = (index) => {
     const newShowComponents = showComponents.map((show, i) => {
@@ -56,7 +57,8 @@ const App = ({ signOut }) => {
         overrides={{
           Chat: { onClick: () => toggleComponent(2) },
           Players: { onClick: () => toggleComponent(0) },
-          Games: { onClick: () => toggleComponent(1) }
+          Games: { onClick: () => toggleComponent(1) },
+          Xbox: { onClick: () => toggleComponent(3) }
         }}
       />
       
@@ -95,6 +97,7 @@ const App = ({ signOut }) => {
         {showComponents[2] && <Chat/>}
         {showComponents[0] && <AddListPlayers/>}
         {showComponents[1] && <AddListGames/>}
+        {showComponents[3] && <Xbox/>}
       
       </Grid>
       

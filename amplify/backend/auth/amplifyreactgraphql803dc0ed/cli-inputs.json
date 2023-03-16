@@ -1,6 +1,8 @@
 {
   "version": "1",
   "cognitoConfig": {
+    "identityPoolName": "amplifyreactgraphql803dc0ed_identitypool_d293adf7",
+    "allowUnauthenticatedIdentities": false,
     "resourceNameTruncated": "amplif803dc0ed",
     "userPoolName": "amplifyreactgraphql803dc0ed_userpool_803dc0ed",
     "autoVerifiedAttributes": [
@@ -23,18 +25,14 @@
     "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
-    "userpoolClientWriteAttributes": [
-      "email"
-    ],
-    "userpoolClientReadAttributes": [
-      "email"
-    ],
+    "userpoolClientWriteAttributes": [],
+    "userpoolClientReadAttributes": [],
     "userpoolClientLambdaRole": "amplif803dc0ed_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
     "sharedId": "803dc0ed",
     "resourceName": "amplifyreactgraphql803dc0ed",
-    "authSelections": "userPoolOnly",
-    "useDefault": "default",
+    "authSelections": "identityPoolAndUserPool",
+    "useDefault": "manual",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
@@ -53,7 +51,7 @@
     },
     "breakCircularDependency": true,
     "dependsOn": [],
-    "hostedUI": false,
+    "hostedUI": true,
     "userPoolGroups": false,
     "adminQueries": false,
     "triggers": {},
@@ -61,6 +59,13 @@
       "Ref": "AWS::StackId"
     },
     "permissions": [],
-    "authProviders": []
+    "authProviders": [],
+    "thirdPartyAuth": false,
+    "hostedUIDomainName": "dmp7mv1ynbmd",
+    "authProvidersUserPool": [
+      "Facebook"
+    ],
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"id\"}}]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://www.tkgamers.com/\"],\"LogoutURLs\":[\"https://www.tkgamers.com/\"]}"
   }
 }
