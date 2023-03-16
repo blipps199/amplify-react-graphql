@@ -11,7 +11,7 @@ const Xbox = () => {
           'X-Authorization': "17dd8d7d-211d-45c2-af76-0365133ff862"
         }
       });
-      const data = response.data;
+      const data = response.data; 
       return data;
     } catch (error) {
       console.error('Error fetching account data:', error);
