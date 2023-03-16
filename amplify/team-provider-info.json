@@ -14,7 +14,9 @@
     },
     "categories": {
       "auth": {
-        "amplifyreactgraphql803dc0ed": {}
+        "amplifyreactgraphql803dc0ed": {},
+        "facebookAppIdUserPool": "1407105713163501",
+        "facebookAppSecretUserPool": "f6c66c981df1974ed5690a814782a4ba"
       },
       "api": {
         "amplifyreactgraphql": {}
