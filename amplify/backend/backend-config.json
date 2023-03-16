@@ -46,6 +46,392 @@
     }
   },
   "function": {},
+  "parameters": {
+    "AMPLIFY_auth_facebookAppIdUserPool_0": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppIdUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppIdUserPool_1": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppIdUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppIdUserPool_10": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppIdUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppIdUserPool_11": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppIdUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppIdUserPool_12": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppIdUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppIdUserPool_13": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppIdUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppIdUserPool_14": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppIdUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppIdUserPool_15": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppIdUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppIdUserPool_2": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppIdUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppIdUserPool_3": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppIdUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppIdUserPool_4": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppIdUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppIdUserPool_5": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppIdUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppIdUserPool_6": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppIdUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppIdUserPool_7": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppIdUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppIdUserPool_8": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppIdUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppIdUserPool_9": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppIdUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_0": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_1": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_10": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_11": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_12": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_13": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_14": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_15": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_16": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_17": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_18": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_19": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_2": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_20": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_21": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_22": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_23": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_24": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_25": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_26": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_27": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_28": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_29": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_3": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_30": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_31": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_4": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_5": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_6": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_7": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_8": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    },
+    "AMPLIFY_auth_facebookAppSecretUserPool_9": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "facebookAppSecretUserPool"
+        }
+      ]
+    }
+  },
   "storage": {
     "imagestorage": {
       "dependsOn": [],
