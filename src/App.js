@@ -19,8 +19,15 @@ import AddListGames from './components/addlistgames'
 import Chat from './components/chat'
 import PrivacyPolicy from './components/privacypolicy'
 import Terms from './components/terms'
+import useFacebookSDK from './useFacebookSDK';
 
 const App = () => {
+  
+  const appId = '614832863826127';
+  const apiVersion = 'v12.0';
+
+  useFacebookSDK(appId, apiVersion);
+  
   const [username, setUsername] = useState(null);
   useEffect(() => {
     async function getUsername() {
