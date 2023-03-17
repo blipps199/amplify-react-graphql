@@ -8,8 +8,8 @@ import {
   Grid,
   Card,
   Menu,
+  MenuItem,
   Divider,
-  withAuthenticator,
 } from '@aws-amplify/ui-react';
 import { Auth } from 'aws-amplify';
 import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
@@ -64,10 +64,12 @@ const App = () => {
             <Flex direction="row" justifyContent="space-between" alignItems="center">
               <Heading level={1}>Three Kings</Heading>
               <Flex alignItems="center">
-                <p>Hello, {username}!</p>
+                <p>{username}</p>
                 <Menu menuAlign="end">
                   <Link to="/chat" onClick={() => toggleComponent(2)}>
-                    Chat
+                    <MenuItem>
+                      Chat
+                    </MenuItem>
                   </Link>
                   <Link to="/players" onClick={() => toggleComponent(0)}>
                     Players
@@ -114,4 +116,4 @@ const SignIn = () => {
   );
 };
 
-export default withAuthenticator(App);
+export default App;

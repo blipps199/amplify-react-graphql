@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { API, Storage } from 'aws-amplify';
-import { Button, Flex, Heading, Text, TextField, View, Card, Image } from '@aws-amplify/ui-react';
+import { Button, Flex, Heading, Text, TextField, View, Card, Image, withAuthenticator } from '@aws-amplify/ui-react';
 import { listGames } from "../graphql/queries";
 import {
   createGame as createGameMutation,
@@ -133,4 +133,4 @@ async function createGame(event) {
 }
 
 
-export default AddListGames;
+export default withAuthenticator(AddListGames);

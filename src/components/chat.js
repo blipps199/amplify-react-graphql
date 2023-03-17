@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { API } from 'aws-amplify';
-import { Button, Flex, Heading, Text, TextField, Card, ScrollView, Badge, View } from '@aws-amplify/ui-react';
+import { Button, Flex, Heading, Text, TextField, Card, ScrollView, Badge, View, withAuthenticator } from '@aws-amplify/ui-react';
 import { listChats } from "../graphql/queries";
 import moment from 'moment';
 import {
@@ -136,4 +136,4 @@ const Chat = () => {
 }
 
 
-export default Chat;
+export default withAuthenticator(Chat);

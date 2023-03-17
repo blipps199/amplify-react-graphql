@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { API, Storage } from 'aws-amplify';
-import { Button, Flex, Heading, Text, TextField, View, Card } from '@aws-amplify/ui-react';
+import { Button, Flex, Heading, Text, TextField, View, Card, withAuthenticator } from '@aws-amplify/ui-react';
 import { listPlayers } from "../graphql/queries";
 import {
   createPlayer as createPlayerMutation,
@@ -124,4 +124,4 @@ const AddListPlayers = () => {
 }
 
 
-export default AddListPlayers;
+export default withAuthenticator(AddListPlayers);
