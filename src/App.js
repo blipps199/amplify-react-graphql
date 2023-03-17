@@ -24,7 +24,7 @@ import useFacebookSDK from './useFacebookSDK';
 const App = () => {
   
   const appId = '614832863826127';
-  const apiVersion = 'v12.0';
+  const apiVersion = 'v16.0';
 
   useFacebookSDK(appId, apiVersion);
   
