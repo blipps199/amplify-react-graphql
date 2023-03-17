@@ -64,7 +64,7 @@ const AddListPlayers = () => {
   return (
     <Card>
       <View as="form" margin="3rem 0" onSubmit={createPlayer}>
-        <Heading level={3} margin="0 0 1rem">Add Player</Heading>
+        <Heading level={3} style={{width: 'fit-content', margin: 'auto', marginBottom: "20px"  }}>Add Player</Heading>
         <Flex direction="row" justifyContent="center" alignItems="center">
           <TextField
             name="playername"
@@ -103,7 +103,7 @@ const AddListPlayers = () => {
           </Button>
         </Flex>
       </View>
-        <Heading level={4}>Current Players</Heading>
+        <Heading level={4} style={{width: 'fit-content', margin: 'auto'  }}>Current Players</Heading>
         <View margin="1rem 0">
             {players.map((player) => (
                 <Flex key={player.id || player.playername} direction="row" justifyContent="center" alignItems="center">

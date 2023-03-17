@@ -94,6 +94,15 @@
   width: 40% !important;
 }
 
+.amplify-menu-content a {
+  color: #000 !important;
+  text-decoration: none;
+  margin: auto;
+}
+
+.amplify-menu-content button:hover a  {
+  color: #fff !important;
+}
 
 
 /*Responsive*/

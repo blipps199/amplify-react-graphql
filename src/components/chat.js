@@ -73,16 +73,7 @@ const Chat = () => {
 
   return (
   <Card>
-    <Heading level={4}>Three Kings Messenger</Heading>
-    <Badge variation="info">
-      Badge
-    </Badge>
-    <Badge variation="info">
-      Badge
-    </Badge>
-    <Badge variation="info">
-      Badge
-    </Badge>
+    <Heading level={4} style={{width: 'fit-content', margin: 'auto'  }}>Three Kings Messenger</Heading>
     <ScrollView className="scroller" onSubmit={createChat}>
       {chats.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp)).map((chat, index) => {
         const isFirstInGroup = index === 0 || chat.username !== chats[index - 1].username;

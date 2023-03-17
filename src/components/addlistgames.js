@@ -62,7 +62,7 @@ async function createGame(event) {
   return (
     <Card>
       <View as="form" margin="3rem 0" onSubmit={createGame}>
-        <Heading level={3} margin="0 0 1rem">Add Game</Heading>
+        <Heading level={3} style={{width: 'fit-content', margin: 'auto', marginBottom: "20px"  }}>Add Game</Heading>
         <Flex direction="row" justifyContent="center" alignItems="center">
           <View
             name="image"
@@ -107,7 +107,7 @@ async function createGame(event) {
           </Button>
         </Flex>
       </View>
-        <Heading level={4}>Current Games</Heading>
+        <Heading level={4} style={{width: 'fit-content', margin: 'auto'}}>Current Games</Heading>
         <View margin="1rem 0">
             {games.map((game) => (
                 <Flex key={game.id || game.name} direction="row" justifyContent="center" alignItems="center">

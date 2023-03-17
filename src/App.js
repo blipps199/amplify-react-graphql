@@ -30,7 +30,7 @@ const App = () => {
     getUsername();
   }, []);
   
-  const [showComponents, setShowComponents] = useState([false, false, true, false]);
+  const [showComponents, setShowComponents] = useState([false, false, true, false, false]);
 
   const toggleComponent = (index) => {
     const newShowComponents = showComponents.map((show, i) => {
@@ -65,30 +65,41 @@ const App = () => {
               <Heading level={1}>Three Kings</Heading>
               <Flex alignItems="center">
                 <p>Hello, {username}!</p>
-                <Menu menuAlign="end">
-                  <Link to="/chat" onClick={() => toggleComponent(2)}>
+                  <Menu menuAlign="end">
                     <MenuItem>
-                      Chat
+                      <Link to="/chat" onClick={() => toggleComponent(2)}>
+                        Chat
+                      </Link>
                     </MenuItem>
-                  </Link>
-                  <Link to="/players" onClick={() => toggleComponent(0)}>
-                    Players
-                  </Link>
-                  <Link to="/games" onClick={() => toggleComponent(1)}>
-                    Games
-                  </Link>
-                  <Divider />
-                  <Link to="/privacy-policy" onClick={() => toggleComponent(3)}>
-                    Privacy Policy
-                  </Link>
-                  <Link to="/terms" onClick={() => toggleComponent(4)}>
-                    Terms and Conditions
-                  </Link>
-                  <Divider />
-                  <Link onClick={signOut}>
-                    Sign Out
-                  </Link>
-                </Menu>
+                    <MenuItem>
+                      <Link to="/players" onClick={() => toggleComponent(0)}>
+                        Players
+                      </Link>
+                    </MenuItem>
+                    <MenuItem>
+                      <Link to="/games" onClick={() => toggleComponent(1)}>
+                        Games
+                      </Link>
+                    </MenuItem>
+                    <Divider />
+                    <MenuItem>
+                      <Link to="/privacy-policy" onClick={() => toggleComponent(3)}>
+                        Privacy Policy
+                      </Link>
+                    </MenuItem>
+                    <MenuItem>
+                      <Link to="/terms" onClick={() => toggleComponent(4)}>
+                        Terms and Conditions
+                      </Link>
+                    </MenuItem>
+                    <Divider />
+                    <MenuItem>
+                      <Link onClick={signOut}>
+                        Sign Out
+                      </Link>
+                    </MenuItem>
+                  </Menu>
+
               </Flex>
             </Flex>
           </Card>
