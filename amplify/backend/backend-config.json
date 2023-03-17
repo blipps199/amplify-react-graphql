@@ -47,6 +47,22 @@
   },
   "function": {},
   "parameters": {
+    "AMPLIFY_auth_amplifyreactgraphql803dc0ed_facebookAppIdUserPool": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "amplifyreactgraphql803dc0ed"
+        }
+      ]
+    },
+    "AMPLIFY_auth_amplifyreactgraphql803dc0ed_facebookAppSecretUserPool": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "amplifyreactgraphql803dc0ed"
+        }
+      ]
+    },
     "AMPLIFY_auth_facebookAppIdUserPool_0": {
       "usedBy": [
         {

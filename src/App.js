@@ -8,31 +8,25 @@ import {
   Grid,
   Card,
   Menu,
-  MenuItem,
   Divider,
   withAuthenticator,
 } from '@aws-amplify/ui-react';
 import { Auth } from 'aws-amplify';
-
-import {
- NavBar 
-} from './ui-components';
+import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
 
 import AddListPlayers from './components/addlistplayers'
 import AddListGames from './components/addlistgames'
 import Chat from './components/chat'
-import Xbox from './components/xbox'
+import PrivacyPolicy from './components/privacypolicy'
+import Terms from './components/terms'
 
-const App = ({ signOut }) => {
-
+const App = () => {
   const [username, setUsername] = useState(null);
-
   useEffect(() => {
     async function getUsername() {
       const result = await Auth.currentUserInfo();
       setUsername(result.username);
     }
-
     getUsername();
   }, []);
   
@@ -49,60 +43,74 @@ const App = ({ signOut }) => {
     setShowComponents(newShowComponents);
   };
   
+  const signOut = async () => {
+    try {
+      await Auth.signOut();
+      return <Navigate to="/login" />;
+    } catch (error) {
+      console.log('error signing out: ', error);
+    }
+  };
+  
   return (
-    <View className="App">
-    
-      <NavBar
-        className="navbar"
-        overrides={{
-          Chat: { onClick: () => toggleComponent(2) },
-          Players: { onClick: () => toggleComponent(0) },
-          Games: { onClick: () => toggleComponent(1) },
-          Xbox: { onClick: () => toggleComponent(3) }
-        }}
-      />
-      
-      
-      <Grid
-        columnGap="0.5rem"
-        rowGap="0.5rem"
-        templateRows="1fr"
-      >
-      { /*
-        <Card>
-          <Flex direction="row" justifyContent="space-between" alignItems="center">
-            <Heading level={1}>Three Kings</Heading>
-            <Flex alignItems="center">
-              <p>Hello, {username}!</p>
-              <Menu menuAlign="end">
-                <MenuItem onClick={() => toggleComponent(2)}>
-                  Chat
-                </MenuItem>
-                <MenuItem onClick={() => toggleComponent(0)}>
-                  Players
-                </MenuItem>
-                <MenuItem onClick={() => toggleComponent(1)}>
-                  Games
-                </MenuItem>
-                <Divider />
-                <MenuItem onClick={signOut}>
-                  Sign Out
-                </MenuItem>
-              </Menu>
+    <Router>
+      <View className="App">
+        <Grid
+          columnGap="0.5rem"
+          rowGap="0.5rem"
+          templateRows="1fr"
+        >
+          <Card>
+            <Flex direction="row" justifyContent="space-between" alignItems="center">
+              <Heading level={1}>Three Kings</Heading>
+              <Flex alignItems="center">
+                <p>Hello, {username}!</p>
+                <Menu menuAlign="end">
+                  <Link to="/chat" onClick={() => toggleComponent(2)}>
+                    Chat
+                  </Link>
+                  <Link to="/players" onClick={() => toggleComponent(0)}>
+                    Players
+                  </Link>
+                  <Link to="/games" onClick={() => toggleComponent(1)}>
+                    Games
+                  </Link>
+                  <Divider />
+                  <Link to="/privacy-policy" onClick={() => toggleComponent(3)}>
+                    Privacy Policy
+                  </Link>
+                  <Link to="/terms" onClick={() => toggleComponent(4)}>
+                    Terms and Conditions
+                  </Link>
+                  <Divider />
+                  <Link onClick={signOut}>
+                    Sign Out
+                  </Link>
+                </Menu>
+              </Flex>
             </Flex>
-          </Flex>
-        </Card>
-      */}
-      
-        {showComponents[2] && <Chat/>}
-        {showComponents[0] && <AddListPlayers/>}
-        {showComponents[1] && <AddListGames/>}
-        {showComponents[3] && <Xbox/>}
-      
-      </Grid>
-      
+          </Card>
 
-    </View>
+          <Routes>
+            <Route path="/chat" element={<Chat />} />
+            <Route path="/players" element={<AddListPlayers />} />
+            <Route path="/games" element={<AddListGames />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/" element={<Navigate to="/chat" />} />
+          </Routes>
+        </Grid>
+      </View>
+    </Router>
+  );
+};
+
+const SignIn = () => {
+  return (
+    <div>
+      <h1>Sign In</h1>
+      <p>Please sign in to access the app.</p>
+    </div>
   );
 };
 

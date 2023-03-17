@@ -18,6 +18,8 @@ export declare type NavBarOverridesProps = {
     Players?: PrimitiveOverrideProps<TextProps>;
     Games?: PrimitiveOverrideProps<TextProps>;
     Xbox?: PrimitiveOverrideProps<TextProps>;
+    "Privacy Policy"?: PrimitiveOverrideProps<TextProps>;
+    "Terms and conditions"?: PrimitiveOverrideProps<TextProps>;
     "Frame 32129767081"?: PrimitiveOverrideProps<FlexProps>;
     "Hi, lipps199!"?: PrimitiveOverrideProps<TextProps>;
     Icon?: PrimitiveOverrideProps<ViewProps>;

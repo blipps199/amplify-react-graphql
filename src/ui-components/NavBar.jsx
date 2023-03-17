@@ -9,10 +9,12 @@ import * as React from "react";
 import {
   getOverrideProps,
   useAuthSignOutAction,
+  useNavigateAction,
 } from "@aws-amplify/ui-react/internal";
 import { Flex, Icon, Image, Text, View } from "@aws-amplify/ui-react";
 export default function NavBar(props) {
   const { overrides, ...rest } = props;
+  const privacyPolicyOnClick = useNavigateAction({ type: "url", url: "" });
   const hiCommalippsOneNineNineExclamationMarkOnClick = useAuthSignOutAction({
     global: false,
   });
@@ -184,6 +186,53 @@ export default function NavBar(props) {
           whiteSpace="pre-wrap"
           children="Xbox"
           {...getOverrideProps(overrides, "Xbox")}
+        ></Text>
+        <Text
+          fontFamily="Inter"
+          fontSize="16px"
+          fontWeight="400"
+          color="rgba(0,0,0,1)"
+          lineHeight="24px"
+          textAlign="left"
+          display="block"
+          direction="column"
+          justifyContent="unset"
+          letterSpacing="0.01px"
+          width="unset"
+          height="unset"
+          gap="unset"
+          alignItems="unset"
+          shrink="0"
+          position="relative"
+          padding="0px 0px 0px 0px"
+          whiteSpace="pre-wrap"
+          children="Privacy Policy"
+          onClick={() => {
+            privacyPolicyOnClick();
+          }}
+          {...getOverrideProps(overrides, "Privacy Policy")}
+        ></Text>
+        <Text
+          fontFamily="Inter"
+          fontSize="16px"
+          fontWeight="400"
+          color="rgba(0,0,0,1)"
+          lineHeight="24px"
+          textAlign="left"
+          display="block"
+          direction="column"
+          justifyContent="unset"
+          letterSpacing="0.01px"
+          width="unset"
+          height="unset"
+          gap="unset"
+          alignItems="unset"
+          shrink="0"
+          position="relative"
+          padding="0px 0px 0px 0px"
+          whiteSpace="pre-wrap"
+          children="Terms and conditions"
+          {...getOverrideProps(overrides, "Terms and conditions")}
         ></Text>
       </Flex>
       <Flex
